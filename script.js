@@ -1,0 +1,1 @@
+/* I didnt find myself needing to use script.js for creating this website, but here it is anyway, just in case */

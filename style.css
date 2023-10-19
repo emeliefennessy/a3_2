@@ -1,0 +1,197 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  /* clear white text, easy to read for children, simple yet effective*/
+}
+
+h1 {
+  margin-top: 20px;
+  background-color: #000;
+  padding: 20px; /* added padding as the star backdrop made it hard to see the text clearly*/
+}
+
+/* The choice to add background colour and padding to the h1 element improves text readability. This is particularly beneficial for children who might need clear, well-structured information.*/
+
+#sun .planet-info {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  left: auto; 
+  right: -230px; /* move the text box to the right */
+  width: 150px;
+  top: -250px; /*  move the text box higher up */
+}
+
+
+
+#sun .planet-img {
+  width: 510px;
+  height: auto; 
+  border-radius: 50%;
+  position: absolute; /* this is what enables the sun to go off the page and not be in a fixed place like the other planets */
+  left: -450px; /* control how much of the Sun is visible, as its not actually a planet it did not need to be fully represented (also for it to be accurate it would have to be huge) */
+  transform: translateY(-50%); /* Correct the vertical alignment */
+}
+
+/* when I was choosing images, as this is a educational kids' website, I thought of including more cartoon style versions of each planet.  
+these images enhances the engagement and appeal for children; its bright and playful imagery is not only eye-catching but also suitable for a younger audience. */
+
+#mercury .planet-img {
+  width: 40px;
+  height: auto; /* keeps the planet size fixed */
+  border-radius: 50%;
+  right: 10px; 
+}
+
+#mercury .planet-info {
+  right: -150px; /* move Mercury's info placement so it doesnt overlap with other planets */
+  top: 90px;
+}
+
+#venus .planet-img {
+  width: 70px;
+  height: auto; 
+  border-radius: 50%;
+}
+
+#venus .planet-info {
+  right: -70px; /* move the text box to the right */
+  top: -200px; /* move the text box higher up */
+}
+
+#earth .planet-img {
+  width: 80px; /* as you can see I altered the size of each planet to make it as acurrate as possible (obviously its not exact but it helps put the size of other planets in comparison, thought this was important as this is an educational site for children) */
+  height: auto; 
+  border-radius: 50%;
+}
+
+#mars .planet-img {
+  width: 50px;
+  height: auto; 
+  border-radius: 50%;
+}
+
+#mars .planet-info {
+  right: -20px; 
+  top: -210px; 
+}
+
+/* for the planet info, at first I had them overlap each other, but then you couldnt see the other planet as the text box was up. I then had all the text boxes appear below each planet, but that became too crowded. that is why some text boxes are above and some below the planets.
+I also think that they ended up spacing out pretty nicley but in order to do this I had to alter the exact location for some of the text boxes.
+placing the planet information boxes both above and below the planets ensures that they don't overlap, allowing children to read about each planet without hindrance. This thoughtful arrangement improves the overall usability of the site.*/
+
+#jupiter .planet-img {
+  width: 300px;
+  height: auto; 
+  border-radius: 50%;
+}
+
+#saturn .planet-img {
+  width: 300px;
+  height: auto; 
+  border-radius: 0%; /* i had to make the border radius 0 here so saturn's rings could fit in, a very important aspect! */
+}
+
+#uranus .planet-img {
+  width: 100px;
+  height: auto; 
+  border-radius: 50%;
+}
+
+#uranus .planet-info {
+  right: -20px; 
+  top: -210px; 
+}
+
+#neptune .planet-img {
+  width: 100px;
+  height: auto; 
+  border-radius: 50%;
+}
+
+.solar-system {
+  display: flex;
+  justify-content: space-between; /* Spacing planets evenly */
+  align-items: center; /* Vertically center the planets */
+  margin: 20px; 
+}
+
+
+.planet {
+  position: relative;
+  text-align: center;
+  transition: transform 0.2s;
+  cursor: pointer;
+  margin: 1px;
+  margin-right: 20px;
+}
+
+
+.planet-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  
+}
+
+/* as this is a site aimed for children, I wanted to make it as interactive as possible while only using hover action, which is why I decided to make the planets englare while hovering.
+Utilising hover actions for planet interaction is a child-friendly approach. Hovering to enlarge planets encourages engagement and curiosity, making learning about the solar system a fun and interactive experience. */
+
+/* Making the planet enlarge on hover - I used the MDN to help me with this via: https://developer.mozilla.org/en-US/docs/Web/CSS/transform */
+.planet:hover {
+  transform: scale(1.2);
+}
+
+.planet-info {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  top: 0;
+  width: 150px;
+  right: 0%;
+  top: 100%; 
+}
+
+/* display planet info box on hover */
+.planet:hover .planet-info {
+  display: block;
+}
+
+/* The planet enlarging effect on hover provides immediate feedback to children, indicating that they can interact with the planets. This visual feedback is essential in helping children understand how to navigate the site.
+The display of information boxes upon hover provides relevant feedback about each planet, promoting an effective learning experience. It ensures that children receive feedback in the form of educational content.*/
+
+.planet-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.solar-system {
+  display: flex;
+  justify-content: space-between; /* Spacing planets evenly */
+  align-items: center; /* Vertically center the planets */
+  margin: 150px auto; /* Adjust the margin to position them  */
+}
+
+/* I originally had a plain black background, and it was a bit boring so to make the site more interesting and fit the theme better, I added stars as the background. I kept it to the cartoon style theme too.
+Adding a starry background aligns with the space theme, making the website more visually appealing and interactive. This choice helped in creating an immersive experience for the children */
+.starry-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('star.png') repeat top center; /* i decided to make the image repeat itself so there appeared to be more stars in the sky, also made the background seem much bigger, which is fitting since this it is meant to be outer space afterall */
+  /* Parée (2013). * Starry Sky Stock *. [online] Flickr. Available at: https://www.flickr.com/photos/pareeerica/9616997915 */
+}
+
+/* Challenges and Potential Issues:
+If I were to expand the content to include more topics or sections about the solar system, I might need to reevaluate the layout to accommodate additional information.
+ Encouraging return visits and long-term engagement could be challenging. in the future I could explore options like quizzes, games, or interactive activities related to the solar system to keep children coming back. */
+
